@@ -67,10 +67,6 @@ strong {
   font-weight: var(--fw-bold) 
 }
 
-:focus {
-  outline: 3px solid var(--clr-accent);
-  outline-offset: 3px;
-}
 
 /*  ------------------ General mobile sm--  ------------------ */
 @media screen and (max-width: 320px) {
@@ -108,7 +104,8 @@ strong {
   background-color: var(--clr-accent-darker);
 }
 .btn:focus {
-  outline-color: var(--clr-light);
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
 }
 /* ------------------ Typography ------------------ */
 
@@ -119,9 +116,15 @@ h3 {
   line-height: 1;
 }
 
-h1 { font-size: var(--fs-h1) }
-h2 { font-size: var(--fs-h2) }
-h3 { font-size: var(--fs-h3) }
+h1 {
+  font-size: var(--fs-h1) 
+}
+h2 { 
+  font-size: var(--fs-h2) 
+}
+h3 { 
+  font-size: var(--fs-h3) 
+}
 
 
 .section__title {
@@ -167,7 +170,7 @@ header {
 
   max-width: 700px;
 
-  padding: .125em .31em;
+  padding: .18em .31em;
   margin: 0 auto;
 
   border-radius: .31em;
@@ -187,21 +190,93 @@ header {
 }
 
 .nav-toggle {
-  max-height: 40px;
+  height: 36px;
+
+  border: 2px solid transparent;
+  background-color: transparent;
+  overflow: hidden;
+}
+/* -------- hamburger button -------- */
+.hamburger {
+  display: block;
+  
+  width: 22px;
+  height: 3px;
+
+  border-radius: 1em;
+  background: var(--clr-dark);
+
+  position: relative;
+
+  transition: all  250ms ease-in-out;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 22px;
+  height: 3px;
+
+  border-radius: 1em;
+  background: var(--clr-dark);
+
+  transition: all  250ms ease-in-out;
+}
+.hamburger::before {
+  top: -6px;
+}
+.hamburger::after {
+  top: 6px;
 }
 
+.nav-toggle:hover {
+  border-color: var(--clr-accent);
+  border-radius: .31em;
+  transition: border-color 250ms ease-in-out;
+}
+.nav-toggle:focus{
+  outline: 2px solid var(--clr-accent);
+  border-radius: .31em;
+}
+.nav-toggle:hover .hamburger,
+.nav-toggle:hover .hamburger::before,
+.nav-toggle:hover .hamburger::after {
+  background: var(--clr-accent);
+}
+
+/* -------- hamburger button active -------- */
+.nav-toggle-active .hamburger {
+  background: transparent !important;
+}
+.nav-toggle-active .hamburger::before {
+  top: 0px;
+  transform: rotate(45deg);
+}
+.nav-toggle-active .hamburger::after {
+  top: 0px;
+  transform: rotate(-45deg);
+}
+
+/* -------- nav menu -------- */
 .nav {
-    position: fixed;
-    background: var(--clr-dark);
-    color: var(--clr-light);
-    top: 0;
-    bottom: 0;
-    left: 0;
+    position: absolute;
+    top: 42px;
     right: 0;
     z-index: 100;
+
+    padding: .31em;
+
+    color: var(--clr-light);
+
+    border-radius: .31em;
+    background: var(--clr-dark);
+
+    transform: translateY(-50%) scaleY(0);
     
-    transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    transition: transform 250ms ease-in-out;
 }
 .nav__list {
     list-style: none;
@@ -216,11 +291,15 @@ header {
 .nav__link {
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h2);
+    font-size: var(--fs-h3);
     text-decoration: none;
 }
 .nav__link:hover {
     color: var(--clr-accent);
+}
+/* -------- nav menu active -------- */
+.nav-active {
+  transform: translateY(-0%) scaleX(100%);
 }
 
 @media screen and (min-width: 600px) {
@@ -239,6 +318,10 @@ header {
 .intro__img {
   border-radius: 0.25em;
   box-shadow: var(--bx-s);
+}
+
+.section__subtitle--intro {
+  color: var(--clr-light);
 }
 
 /*  ------------------ Intro Tablet++  ------------------ */
@@ -463,7 +546,9 @@ header {
 
 .portfolio__item:focus {
   z-index: 2;
-  border-radius: 1em;
+  border-radius: 1em; 
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
 }
 
 /* ------------------ Footer ------------------ */
@@ -480,6 +565,11 @@ footer {
   font-size: 1.2rem;
 
   background-color: #111;
+}
+
+footer *:focus{
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
 }
 
 footer ul {
@@ -507,7 +597,6 @@ footer a {
 }
 
 .social-list__link:focus {
-  transition: all 250ms ease-in-out;
 
   border-radius: 2px;
   transform: scale(1.2);
