@@ -22,12 +22,13 @@
   --clr-light: #fff;
   --clr-dark: #303030;
   --clr-accent: #FF3E00;
+  --clr-accent-darker: #cb3300;
   
   --bx-s: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
     0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
-/*  ------------------ Tablet++  ------------------ */
+/*  ------------------ Fonts Tablet++  ------------------ */
 @media (min-width: 800px) {
   :root {
       --fs-h1: 4.5rem;
@@ -40,7 +41,9 @@
 /* ------------------ General styles ------------------ */
 
 body {
-  margin: 0;
+  max-width: 1440px;
+
+  margin: 0 auto;
 
   color: var(--clr-dark);
   line-height: 1.6;
@@ -60,15 +63,53 @@ img {
   max-width: 100%;
 }
 
-strong { font-weight: var(--fw-bold) }
+strong { 
+  font-weight: var(--fw-bold) 
+}
 
-/*  ------------------ mobile sm--  ------------------ */
+:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+/*  ------------------ General mobile sm--  ------------------ */
 @media screen and (max-width: 320px) {
   section {
     padding: 2em 1em;
   }
 }
 
+/* ------------------ Buttons styles ------------------ */
+
+.btn {
+  display: inline-block;
+
+  width: 200px;
+
+  padding: .5em 1.5em;
+
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--clr-light);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  border-radius: .25em;
+  background-color: var(--clr-accent);
+  box-shadow: var(--bx-s);
+
+  cursor: pointer;
+
+  transition: all 250ms ease-in-out;
+}
+.btn:hover, 
+.btn:focus {
+  transform: scale(1.2);
+  background-color: var(--clr-accent-darker);
+}
+.btn:focus {
+  outline-color: var(--clr-light);
+}
 /* ------------------ Typography ------------------ */
 
 h1,
@@ -165,5 +206,84 @@ nav { display: none; }
     text-align: right;
     
     width: calc(100% + 1.5em)
+  }
+}
+
+/*  ------------------ My Services  ------------------ */
+.my-services {
+
+  color: var(--clr-light);
+  text-align: center;
+
+  background-color: var(--clr-dark);
+}
+
+.services {
+  margin-bottom: 2em;
+}
+
+.section__title--services {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+
+  text-align: center;
+  font-size: var(--fs-h1);
+  color: var(--clr-accent);
+
+  position: relative;
+}
+
+.section__title--services::after {
+  content: "";
+  position: relative;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: block;
+
+  width: 100px;
+  height: 2px;
+
+  /* color: cu; */
+
+  border-radius: 2px;
+  background-color: currentColor;
+}
+
+.service {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+/*  ------------------ My Services Tablet++  ------------------ */
+@media screen and (min-width: 600px) {
+  .section__title--services {
+    color: var(--clr-light);
+  }
+  /* .section__title--services::after {
+    background-color: var(--clr-light);
+  } */
+
+  .my-services {
+    background-color: var(--clr-accent-darker);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-image: url(/img/services-bg.jpg);
+  }
+
+  .services {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
+  .service {
+    margin: .31em;
+    width: 260px;
   }
 }
