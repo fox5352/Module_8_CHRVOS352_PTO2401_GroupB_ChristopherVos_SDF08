@@ -19,13 +19,15 @@
   --fs-body: 1rem;
   
   /* colors */
-  --color-light: #fff;
-  --color-dark: #303030;
-  --color-accent: #FF3E00;
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #FF3E00;
   
+  --bx-s: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+    0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
-/* Adjust font  size for mobile view */
+/*  ------------------ Tablet++  ------------------ */
 @media (min-width: 800px) {
   :root {
       --fs-h1: 4.5rem;
@@ -35,14 +37,17 @@
   }
 }
 
+/* ------------------ General styles ------------------ */
 
 body {
-  background: var(--clr-light);
-  color: var(--clr-dark);
   margin: 0;
-  font-family: var(--ff-primary);
-  font-size: var(--fs-body);
+
+  color: var(--clr-dark);
   line-height: 1.6;
+  font-size: var(--fs-body);
+  font-family: var(--ff-primary);
+
+  background: var(--clr-light);
 }
 
 section {
@@ -51,19 +56,26 @@ section {
 
 img {
   display: block;
+
   max-width: 100%;
 }
 
 strong { font-weight: var(--fw-bold) }
 
-/* Typography */
+/*  ------------------ mobile sm--  ------------------ */
+@media screen and (max-width: 320px) {
+  section {
+    padding: 2em 1em;
+  }
+}
 
+/* ------------------ Typography ------------------ */
 
 h1,
 h2,
 h3 {
-    line-height: 1;
-    margin: 0;
+  margin: 0;
+  line-height: 1;
 }
 
 h1 { font-size: var(--fs-h1) }
@@ -72,64 +84,86 @@ h3 { font-size: var(--fs-h3) }
 
 
 .section__title {
-    margin-bottom: .25em;
+  margin-bottom: .25em;
 }
 
 .section__title--intro {
-    font-weight: var(--fw-reg);
+  font-weight: var(--fw-reg);
 }
 
 .section__title--intro strong {
-    display: block;
+  display: block;
 }
 
 .section__subtitle {
-    margin: 0;
-    font-size: var(--fs-h3);
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro {
+  align-self: start;
+  
+  text-align: right;
+  color: var(--clr-lights);
 }
 
 .section__subtitle--intro,
 .section__subtitle--about {
-    background: var(--color-accent);
-    font-family: var(--ff-secondary);
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+  padding: .25em 1em;
+
+  font-family: var(--ff-secondary);
+
+  background: var(--clr-accent);
 }
 
+/* ------------------ header ------------------ */
 
-/* ------------------------ Header ------------------------ */
-nav {
-  display: none;
-}
-/* ------------------------ Intro ------------------------ */
+nav { display: none; }
+
+/*  ------------------ Intro section  ------------------ */
 
 .intro {
   position: relative;
 }
 
+.intro__img {
+  border-radius: 0.25em;
+  box-shadow: var(--bx-s);
+}
+
+/*  ------------------ Intro Tablet++  ------------------ */
 @media (min-width: 600px) {
   .intro {
       display: grid;
-      width: min-content;
-      margin: 0 auto;
       grid-column-gap: 1em;
       grid-template-areas: 
-          "img title"
-          "img subtitle";
+      "img title"
+      "img subtitle";
       grid-template-columns: min-content max-content;
+
+      width: min-content;
+
+      margin: 0 auto;
   }
   
   .intro__img {
       grid-area: img;
+      
       min-width: 250px;
   }    
   
   .section__subtitle--intro {
-      align-self: start;
-      grid-column: -1 / 1;
+    position: relative;
+    left: -1.5em;
+    z-index: -1;
+
+    grid-column: -1 / 1;
+    grid-row: 2;
+
+    align-self: start;
+    text-align: right;
+    
+    width: calc(100% + 1.5em)
   }
 }
-
-/* ------------------------ Services ------------------------ */
-/* ------------------------ About ------------------------ */
-/* ------------------------ My work ------------------------ */
-/* ------------------------ Footer ------------------------ */
