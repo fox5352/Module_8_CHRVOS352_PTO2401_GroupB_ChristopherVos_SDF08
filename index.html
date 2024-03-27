@@ -3,13 +3,113 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevJane Portfolio Website</title>
+        <title>DevChris Portfolio Website</title>
+        <!-- link a normalize file -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <!-- link font-awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
 
-
+        <!-- custom font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/style.css">
     </head>
     <body>
+
+        <header>
+            <div class="logo">
+                <!-- <img src="img/devjane.png" alt=""> -->
+                <h1 class="logo__title">
+                    <span>&lt;</span>
+                    Dev Chris
+                    <span>&gt;</span>
+                </h1>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav-link">My Services</a></li>
+                    <li class="nav__item"><a href="#about" class="nav-link">About me</a></li>
+                    <li class="nav__item"><a href="#work" class="nav-link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- ------------------------ Introduction ------------------------ -->
+        <section class="intro" id="home">
+            <h1 class="section__title section-title--intro">
+                Hi, I am <strong>Christopher</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">front-end dev</p>
+            <img class="intro__img" src="img/dev-jane-01.jpg" alt="a picture of Jane Smith smiling">
+        </section>
+        
+        
+        <!-- ------------------------ My services ------------------------ -->
+        <!-- <section class="my-services" id="services">
+            <h2 class="section-title section-title--services">What I do</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Design + Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div> 
+                
+                <div class="service">
+                    <h3>E-Commerce</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div> 
+                
+                <div class="service">
+                    <h3>WordPress</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+            
+            <a href="#work" class="btn">My Work</a>
+        </section> -->
+        
+        
+        <!-- ------------------------ About me ------------------------ -->
+        <!-- <section class="about-me" id="about">
+            <h2 class="section-title section-title--about">Who I am</h2>
+            <p class="section-subtitle section-subtitle--about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatibus numquam nobis, soluta ratione unde facilis blanditiis repellendus deleniti eius quam sit dolor nam error ipsum deserunt aut earum exercitationem.</p>
+
+            <div class="about-me-body">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eligendi consequatur porro deserunt voluptate? Optio      laudantium amet, itaque, quaerat ad, asperiores nihil cum quos voluptatibus et est possimus eaque qui.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus maiores vero nisi adipisci repellendus debitis, a, illo voluptate et voluptas maxime voluptatum, culpa ipsum veniam unde tempora iure impedit cum?
+                </p>
+            </div>
+
+            <img src="/img/dev-jane-02.jpg" alt="jane on a buss">
+        </section> -->
+
+        
+        <!-- ------------------------ My work ------------------------ -->
+        
+        <!-- ------------------------ footer ------------------------ -->
+        <!-- <footer>
+            <a href="mailto:christophervos522@gmail.com" class="footer-link">christophervos522@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list-item">
+                    <a class="social-list-link" href="https://codepen.io">a</a>
+                </li>
+                <li class="social-list-item">
+                    <a class="social-list-link" href="http://dribbble.com">b</a>
+                </li>
+                <li class="social-list-item">
+                    <a class="social-list-link" href="https://twitter.com">c</a>
+                </li>
+                <li class="social-list-item">
+                    <a class="social-list-link" href="https://github.com">d</a>
+                </li>
+            </ul>
+        </footer> -->
         
     </body>
 </html>
